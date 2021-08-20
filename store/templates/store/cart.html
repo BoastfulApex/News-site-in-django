@@ -1,0 +1,17 @@
+{% extends 'store/index.html'%}
+{% load static %}
+
+{% block content%}
+{% for new in news %}
+    <div class="col-lg-10">
+        <div class="card" >
+            <img class="card-img-top" src="{{ new.imageURL }}" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">{{ new.name }}</h4>
+                <p class="card-text">{{ new.main}}</p>
+                <a href="{{new.tag}}" class="btn btn-primary">#{{new.tag}}</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock content%}
